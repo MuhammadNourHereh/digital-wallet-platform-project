@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+
+<body>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit">Login</button>
+    </form>
+    <p id="message"></p>
+</body>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        fetch("http://localhost:3000/wallet-server/index.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",  // Required for sessions
+            body: JSON.stringify({
+                username: document.getElementById("username").value,
+                password: document.getElementById("password").value
+            })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.message) {
+                    window.location.href = "dashboard.html";
+                } else {
+                    document.getElementById("message").innerText = data.error;
+                }
+            });
+    });
+</script>
+
+</html>
