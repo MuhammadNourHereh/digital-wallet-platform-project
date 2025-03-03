@@ -20,7 +20,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($row = $result->fetch_assoc()) {
-    if (password_verify($password, $row['password'])) {
+    if ($password == $row['password']) {
         $_SESSION["user_id"] = $row['id']; // Store user ID in session
         echo json_encode(["message" => "Login successful"]);
     } else {
