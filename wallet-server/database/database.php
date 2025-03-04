@@ -1,15 +1,5 @@
 <?php
 
-// conn strings
-$host = 'localhost';
-$db = 'digital_wallet_db';
-$user = 'root';
-$password = '';
-
-// conn object
-if (!$conn = @mysqli_connect($host, $user, $password))
-    die("error");
-
 // create database
 // you should have the required priviliages
 mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS $db");
