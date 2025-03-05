@@ -23,6 +23,14 @@ try {
     $query->execute();
     $balance = $query->get_result()->fetch_assoc();
 
+    if (empty($balance)) {
+        http_response_code(404);
+        echo json_encode([
+            "message" => "user_id not found"
+        ]);
+        exit;
+    }
+
     http_response_code(200);
     echo json_encode([
         "amount_usd" => $balance['amount_usd'],
