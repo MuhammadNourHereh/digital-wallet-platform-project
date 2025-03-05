@@ -1,4 +1,6 @@
 <?php
+require_once "../../utils/paths.php";
+require_once path("conn");
 
 // create database
 // you should have the required priviliages
