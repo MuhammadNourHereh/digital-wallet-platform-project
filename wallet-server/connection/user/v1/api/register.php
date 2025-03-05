@@ -23,16 +23,11 @@ $password = $_POST["password"];
 $hashed = password_hash($password, PASSWORD_BCRYPT);
 $query = $conn->prepare("INSERT INTO users(username, password) values(?, ?)");
 try {
-  echo 0;
-  
-  echo 1;
   $query->bind_param("ss", $username, $hashed);
   $query->execute();
-  echo 1;
   $query = $conn->prepare("SELECT * FROM users WHERE username = ?");
   $query->bind_param("s", $username);
   $query->execute();
-  echo 2;
   $user = $query->get_result()->fetch_assoc();
 
   echo json_encode([

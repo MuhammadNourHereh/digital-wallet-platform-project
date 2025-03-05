@@ -3,6 +3,14 @@ require_once "../../../../utils/paths.php";
 require_once path("conn");
 require_once path("cors-headers");
 
+
+
+// Handle CORS preflight (OPTIONS request)
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
 if (!isset($_POST["username"]) || !isset($_POST["password"])) {
     http_response_code(400);
     echo json_encode([
@@ -35,7 +43,7 @@ try {
     http_response_code(400);
 
     echo json_encode([
-        "message" => $e
+        "message" => "error"
     ]);
 }
 
