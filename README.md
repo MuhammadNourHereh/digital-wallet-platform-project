@@ -9,6 +9,8 @@
 **seeds:** to populate database with dummy data you can run "seeds/userSeeds.php"
 
 
-## Hosting Details 
-IP Address is: 13.39.104.164 
+## Hosting Details
+
+IP Address is: 13.39.104.164
+
 DNS: ec2-13-39-104-164.eu-west-3.compute.amazonaws.com
