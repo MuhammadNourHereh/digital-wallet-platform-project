@@ -1,5 +1,5 @@
 <?php
-require_once "../../../../utils/paths.php";
+require_once __DIR__ . "/../../../../utils/paths.php";
 require_once path("conn");
 require_once path("cors-headers");
 
