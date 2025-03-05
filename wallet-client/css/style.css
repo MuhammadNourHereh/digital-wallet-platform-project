@@ -20,7 +20,9 @@
     flex-direction:column;
     background-color: lightslategray;
 }
-
+.form-item {
+    margin: 5px;
+}
 input {
     margin: 5px;
     width: 40vw;

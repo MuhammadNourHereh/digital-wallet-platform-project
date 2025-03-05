@@ -5,11 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <h1>you are logged-in <spam id="name"> </spam></h1>
+    <h1>you are logged-in <spam id="name"> </spam>
+    </h1>
     <button id="logout">logout</button>
+
+    <hr>
+    <form>
+        <div class="center form">
+            <div class="start">
+                <label class="form-item">deposite/withdraw</label><br>
+                <select class="form-item">
+                    <option>deposite</option>
+                    <option>withdraw</option>
+                </select><br>
+                <select class="form-item" name="curruncy">
+                    <option>USD</option>
+                    <option>LB</option>
+                </select><br>
+                <input class="form-item" type="number" name="amount"><br>
+                <button class="form-item" type="submit">submit</button>
+            </div>
+        </div>
+    </form>
 </body>
 <script src="scripts/dashboard.js"></script>
 

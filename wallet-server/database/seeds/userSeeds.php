@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../../utils/paths.php';
 
 $users = [
+    ['username' => 'abc', 'password' => '123'],
     ['username' => 'hassan_ali', 'password' => '12345'],
     ['username' => 'layla_jou', 'password' => 'pass1'],
     ['username' => 'noura_haddad', 'password' => 'abcd1'],
